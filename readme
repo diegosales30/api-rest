@@ -1,0 +1,69 @@
+
+criar pasta src
+1 na pasta raiz no terminal digite "npm init -y"
+
+//para criar apis, é possivel usar os proprios modulos do node
+//ou usar a lib Express
+
+2 no terminal raiz digite "npm install express --save" para
+usar o express par criar apis.
+
+//escutar server de forma agil
+// -D é uma flag para usar apenas no modo desenvolvimento
+3 no terminal instalar nodemon -D "npm install nodemon -D"
+// alterar o package.json para rodar o server com o nodemon
+//npm run dev para iniciar o server
+[
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+]
+
+// separar as respobilidades dos arquivos para facilitar a manutenção
+
+4 criar arquivo server.js na raiz do projeto
+[
+  import app from "./src/app.js"; //importante usar .js no final
+  levar a const port = 3333 e colar no server.js
+  'const port = 3333'
+
+  levar tbm o escutador do servidor e colar no server.js
+  'app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  })'
+]
+
+5 criar type module dentro do package.json
+"type": "module",
+// e executar o novo arquivo server.js com "node server.js"
+// para mudar iss basta alterar o pakege.json para "dev": "nodemon server.js",
+[
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+]
+// e agr podemos executar o server com "npm run dev"
+
+
+/* --------------------------- */
+//persitenci de dados com MYSQL
+//instalar o mysql no terminal raiz do projeto com
+ - 'npm install mysql'
+
+
+//em seguida ir no browser e baixar mysql workbench
+ 'baixar o mysql  - msql server e mysql workbench'
+  'criar novo squema com o nome "dbcopa"'
+  'escolher utf8 e utf8unicode ci'
+
+ `CREATE SCHEMA `dbcopa` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;`
+
+//agora no vscode, preciso fazer uma ligação com o banco de dados
+//para fzer isso temos que usar conexão, basta criar uma pasta
+//chama infra, na raiz
+
+ FIM NODE JS SEM MVC, SEM PADRÃO!
+
